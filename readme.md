@@ -24,8 +24,8 @@ python3 ./lab.py
 
 3. Open 127.0.0.1:80
 4. login as `demo:demo`
-5. Open lab ![image](https://user-images.githubusercontent.com/2915361/76143162-fe747180-606c-11ea-8b50-429b9067c62b.png)
-6. Observe graph ![image2](https://user-images.githubusercontent.com/2915361/76143179-2368e480-606d-11ea-8d11-8ce5d360884e.png)
+5. Open lab ![image](./dag.jpg)
+6. Observe graph
 7. Check
 ![image](./nodes.jpg)
 
