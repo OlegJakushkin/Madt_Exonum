@@ -7,7 +7,7 @@ def main():
     nodes = []
     for counter in range(node_count):
         node = net.create_node('Node'+str(counter), 
-                               image='madt/exonum', entrypoint='sh -c "launch.sh ' + str(counter) + '"')
+                               image='madt/exonum', entrypoint='sh -c "./docker/run.sh ' + str(counter) + '"')
         nodes.append(node)
         
     net.create_subnet('test net', nodes)

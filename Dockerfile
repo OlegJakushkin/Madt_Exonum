@@ -23,3 +23,5 @@ RUN git clone --branch v1.0.0 https://github.com/exonum/exonum.git \
   && cd exonum/examples/cryptocurrency-advanced/backend \
   && cargo update && cargo install --path . 
 WORKDIR /usr/src/exonum/examples/cryptocurrency-advanced
+
+COPY run.sh ./docker/run.sh

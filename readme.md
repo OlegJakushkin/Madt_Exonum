@@ -28,4 +28,15 @@ python3 ./lab.py
 6. Observe graph
 7. Check
 ![image](./nodes.jpg)
+8. Run script for run nodes:
+```
+bash runNodes.sh
+
+As result:
+new node with ports: 8000 (public) and 8050 (private)
+new node with ports: 8001 (public) and 8051 (private)
+new node with ports: 8002 (public) and 8052 (private)
+new node with ports: 8003 (public) and 8053 (private)
+new node with ports: 8004 (public) and 8054 (private)
+```
 
