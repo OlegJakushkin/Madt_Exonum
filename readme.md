@@ -1,6 +1,6 @@
-To run:
+# MADT_Exonum
 
-1. Download and start MADT
+1. Скачайте и запустите MADT:
 ```
 cd ~
 git clone --recursive https://github.com/dltcspbu/madt/
@@ -14,21 +14,26 @@ sudo make && sudo make install
 sudo -HE env PYTHONPATH=$HOME/madt:$PYTHONPATH SSH_PWD=demo python3 madt_ui/main.py 80  
 ```
 
-2. Build images and start the lab
+2. Соберите образ и запустите lab.py:
 ```
 #open new terminal window
 docker build -t madt/exonum .
 python3 ./lab.py
 ```
-![image](./image.jpg)
+![image](./images/image.jpg)
 
-3. Open 127.0.0.1:80
-4. login as `demo:demo`
-5. Open lab ![image](./dag.jpg)
-6. Observe graph
-7. Check
-![image](./nodes.jpg)
-8. Run script for run nodes:
+3. Перейдите на 127.0.0.1:80, для login используйте: `demo:demo`
+4. После открытия лаборатории вы должны увидеть следующее: ![image](./images/dag.jpg)
+5. Проверьте, что все контейнеры запущены:
+![image](./images/nodes.jpg)
+6. Запустите скрипт для тестирования:
+```
+cd ./tests
+bash test.sh
+```
+7. Пример запуска и тестирования:
+![Alt Text](./images/madt_exonum.gif)
+8. Для запуска узлов используйте скрипт:
 ```
 bash runNodes.sh
 
