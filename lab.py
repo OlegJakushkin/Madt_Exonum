@@ -6,10 +6,9 @@ def main():
     node_count = 5
     nodes = []
     for counter in range(node_count):
-        node = net.create_node('Node'+str(counter), 
-                               image='madt/exonum', entrypoint='sh -c "./docker/run.sh ' + str(counter) + '"')
+        port = 8000+counter
+        node = net.create_node('Node'+str(counter), image='madt/exonum', ports={str(port) + "/tcp": port}, privileged=True)
         nodes.append(node)
-        
     net.create_subnet('test net', nodes)
 
     net.configure(verbose=True)
