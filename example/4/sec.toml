@@ -1,0 +1,34 @@
+consensus_public_key = "e9e717bf495ed855a3ec010d0efd7b8c2b94fc4fa9a5767ee92bcc3fe19ba60d"
+external_address = "15.0.0.5:6334"
+listen_address = "0.0.0.0:6334"
+master_key_path = "master.key.toml"
+
+[api]
+state_update_timeout = 10000
+
+[api.server_restart]
+max_retries = 20
+retry_timeout = 500
+
+[connect_list]
+peers = []
+
+[database]
+compression_type = "none"
+create_if_missing = true
+[mempool.events_pool_capacity]
+api_requests_capacity = 1024
+internal_events_capacity = 128
+network_events_capacity = 512
+network_requests_capacity = 512
+
+[mempool.flush_pool_strategy]
+timeout = 20
+type = "timeout"
+
+[network]
+max_incoming_connections = 128
+max_outgoing_connections = 128
+tcp_connect_max_retries = 10
+tcp_connect_retry_timeout = 15000
+tcp_nodelay = true
