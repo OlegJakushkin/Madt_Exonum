@@ -25,6 +25,13 @@ RUN git clone --branch v1.0.0 https://github.com/exonum/exonum.git \
   && cd ../frontend && npm install && npm run build
 WORKDIR /usr/src/exonum/examples/cryptocurrency-advanced
 
+RUN apt-get install iputils-ping -y
+RUN apt-get install iproute2 -y
+RUN apt-get install net-tools
+
 COPY example ./docker/example
 COPY run.sh ./docker/run.sh
 COPY runWeb.sh ./docker/runWeb.sh
+RUN chmod +x ./docker/run.sh
+RUN chmod +x ./docker/runWeb.sh
+

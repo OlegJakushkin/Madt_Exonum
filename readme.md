@@ -84,16 +84,16 @@ new node with ports: 8004 (public) and 8054 (private)
 1. Создадим сеть:
 
 ```
-docker network create PRIVATENET
+docker network create --subnet=15.0.0.0/29 PRIVATENET
 ```
 
 2. Создадим 4 контейнера:
 
 ```
-docker run -it --net=PRIVATENET -p 6331:6331 -p 8000:8000 -p 8008:8008 --name exonum_1 -d madt/exonum
-docker run -it --net=PRIVATENET -p 6332:6332 -p 8001:8001 --name exonum_2 -d madt/exonum
-docker run -it --net=PRIVATENET -p 6333:6333 -p 8002:8002 --name exonum_3 -d madt/exonum
-docker run -it --net=PRIVATENET -p 6334:6334 -p 8003:8003 --name exonum_4 -d madt/exonum
+docker run -it --net=PRIVATENET -p 6331:6331 -p 8000:8000 -p 8008:8008 --name MADT_exonum_Node0 -d madt/exonum
+docker run -it --net=PRIVATENET -p 6332:6332 -p 8001:8001 --name MADT_exonum_Node1 -d madt/exonum
+docker run -it --net=PRIVATENET -p 6333:6333 -p 8002:8002 --name MADT_exonum_Node2 -d madt/exonum
+docker run -it --net=PRIVATENET -p 6334:6334 -p 8003:8003 --name MADT_exonum_Node3 -d madt/exonum
 ```
 
 3. Для каждого контейнера: перейти в директорию `./docker/example/{1,2,3,4}` и расширить права:
